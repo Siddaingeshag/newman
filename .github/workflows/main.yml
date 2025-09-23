@@ -1,1 +1,25 @@
-#
+name: API Tests
+on: [push, pull_request]
+jobs:
+  api-test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+    - name: Install Newman and HTML Reporter
+      run: npm install -g newman newman-reporter-html
+    - name: Run API Tests
+      run: |
+        newman run collection.json \
+          -e environment.json \
+          -r cli,html \
+          --reporter-html-export report.html
+    - name: Upload HTML Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: api-test-report
+        path: report.html
+        
