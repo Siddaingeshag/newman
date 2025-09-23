@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "23294f58-a26d-409f-9df8-4d58c1422e3a",
+		"name": "all_oper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48599861",
+		"_collection_link": "https://siddalingeshag-2466140.postman.co/workspace/Siddalingesha-G's-Workspace~8ad0cf0a-4447-4f9d-87a4-16bda4defc96/collection/48599861-23294f58-a26d-409f-9df8-4d58c1422e3a?action=share&source=collection_link&creator=48599861"
+	},
+	"item": [
+		{
+			"name": "get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"name\": \"mango\",\r\n        \"price\": 1.99\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-4go0.onrender.com/",
+					"protocol": "https",
+					"host": [
+						"api-4go0",
+						"onrender",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post(add new data)",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// pm.test(\"Check if response status code is 201\", function () {",
+							"//     pm.response.to.have.status(201);",
+							"// });",
+							"pm.test(\"Content-Type is application/json\", function () {",
+							" ",
+							"pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"Kunal_CMRIT\",\r\n        \"price\": 2000\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-4go0.onrender.com/items/129",
+					"protocol": "https",
+					"host": [
+						"api-4go0",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"items",
+						"129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put(edit old data)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"name\": \"siddalingesh\",\r\n        \"price\": 1.99\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-4go0.onrender.com/items/25",
+					"protocol": "https",
+					"host": [
+						"api-4go0",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"items",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patch",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \r\n        \"name\": \"siddu\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-4go0.onrender.com/items/25",
+					"protocol": "https",
+					"host": [
+						"api-4go0",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"items",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-4go0.onrender.com/items/44",
+					"protocol": "https",
+					"host": [
+						"api-4go0",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"items",
+						"44"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
